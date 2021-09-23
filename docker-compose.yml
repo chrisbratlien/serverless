@@ -1,0 +1,12 @@
+version: "2"
+services:
+  web:
+    stdin_open: true
+    tty: true
+    image: sebp/lighttpd
+    container_name: serverless
+    restart: always
+    volumes:
+      - ./:/var/www/localhost/htdocs
+    ports:
+      - ${WEBSERVER_PORT}:80
