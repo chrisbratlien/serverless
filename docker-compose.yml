@@ -7,6 +7,7 @@ services:
     container_name: serverless
     restart: always
     volumes:
-      - ./:/var/www/localhost/htdocs
+      - ./htdocs:/var/www/localhost/htdocs
+      - ./etc/lighttpd:/etc/lighttpd
     ports:
       - ${WEBSERVER_PORT}:80
